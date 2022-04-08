@@ -1,13 +1,46 @@
 
 .App-header {
   background-image: url("fundo.png");
-  background-size: cover;
+  background-size: 200% 200%;
   height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #272424;
+  transition: 1s;
 }
 
+.pos1{
+  background-position: 25% 25%;
+}
+
+.pos2{
+  background-position: 75% 25%;
+}
+
+.pos3{
+  background-position: 25% 75%;
+}
+.pos4{
+  background-position: 50% 50%;
+}
+.pos5{
+  background-position: 30% 100%;
+}
+.pos6{
+  background-position: 100% 100%;
+}
+.pos7{
+  background-position: 100% 10%;
+}
+.pos8{
+  background-position: 10% 100%;
+}
+.pos9{
+  background-position: 50% 100%;
+}
+.pos10{
+  background-position: 100% 50%;
+}
 

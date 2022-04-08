@@ -26,16 +26,23 @@
 }
 .vermelho{
     color: #da1515;
+
 }
 .laranja{
     color: #f09102;
+
 }
 .azul{
     color: #4e0bca;
+
 }
 .verde{
     color: #08b316;
+
 }
 .amarelo{
-    color: #c4c700;
+    color: #e0e403;
+    text-stroke: 1px #272424 ;
+    -webkit-text-stroke: 1px #272424;
+    
 }
