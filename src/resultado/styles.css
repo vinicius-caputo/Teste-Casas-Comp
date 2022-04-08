@@ -1,0 +1,41 @@
+
+.resultBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+.resultTitulo{
+    font-family: 'Bigelow Rules', cursive;
+    letter-spacing: 2px;
+    font-size: 70px; 
+    text-align: center;
+}
+
+.resultado {
+    font-family: 'Smythe', cursive;
+    font-size: 50px;
+    text-align: center;
+}
+.imagemResultado{
+    margin-top: auto;
+    width: 200px;
+    height: 200px;
+}
+.vermelho{
+    color: #da1515;
+}
+.laranja{
+    color: #f09102;
+}
+.azul{
+    color: #4e0bca;
+}
+.verde{
+    color: #08b316;
+}
+.amarelo{
+    color: #c4c700;
+}
