@@ -101,10 +101,6 @@
     .perguntasBox p {
         font-size: 30px;
     }
-    .repostaBox{
-        margin-top: -30px;
-        
-    }
 }
 
 @media (max-width: 600px)
@@ -143,9 +139,5 @@
     .perguntasBox p:last-child {
         margin-right: 20px;
         text-align: right;  
-    }
-    .repostaBox{
-        margin-top: -20px;
-        
     }
 }
