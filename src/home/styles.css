@@ -1,0 +1,26 @@
+#box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 60vh;
+
+}
+.botaoHome{
+    width: 200px;
+    height: 50px;
+    border: 2px solid #272424;
+    align-self: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+    font-family: 'Smythe', cursive;
+    font-size: 30px;
+}
+.botaoHome:hover{
+    background-color: #272424;
+    color: #fff;
+}

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Pergunta from "./pergunta";
 import Resultado from "./resultado";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
+import Cookies from "universal-cookie";
+import Home from "./home";
 
 function App() {
   const [SomosTransparentes, setSomosTransparentes] = useState(0);
@@ -11,17 +13,22 @@ function App() {
   const [FazemosAcontencer, setFazemosAcontencer] = useState(0);
   const [DesenvolvemosPessoas, setDesenvolvemosPessoas] = useState(0);
 
-  const [pos, setpos] = useState("App-header pos1")
-  const [pergunta, setpergunta] = useState(1);
+  const [pos, setpos] = useState("App-header pos1");
+  const [pergunta, setpergunta] = useState(0);
+
 
   const Perguntas = () => {
-    console.log("SomosTransparentes ", SomosTransparentes);
-    console.log("VamosAlem ", VamosAlem);
-    console.log("AmamosResultados ", AmamosResultados);
-    console.log("FazemosAcontencer ", FazemosAcontencer);
-    console.log("DesenvolvemosPessoas ", DesenvolvemosPessoas);
-    console.log("------------------------------------------------");
+    // console.log("SomosTransparentes ", SomosTransparentes);
+    // console.log("VamosAlem ", VamosAlem);
+    // console.log("AmamosResultados ", AmamosResultados);
+    // console.log("FazemosAcontencer ", FazemosAcontencer);
+    // console.log("DesenvolvemosPessoas ", DesenvolvemosPessoas);
+    // console.log("------------------------------------------------");
     switch (pergunta) {
+      case 0:
+        return (
+          <Home Pergunta={pergunta} Setpergunta={setpergunta}/>
+        );
       case 1:
         return (
           <Pergunta
@@ -158,12 +165,6 @@ function App() {
   };
 
   const Casa = () => {
-    console.log("SomosTransparentes ", SomosTransparentes);
-    console.log("VamosAlem ", VamosAlem);
-    console.log("AmamosResultados ", AmamosResultados);
-    console.log("FazemosAcontencer ", FazemosAcontencer);
-    console.log("DesenvolvemosPessoas ", DesenvolvemosPessoas);
-    console.log("------------------------------------------------");
     let valorAlto = Math.max(
       SomosTransparentes,
       AmamosResultados,
@@ -171,23 +172,19 @@ function App() {
       FazemosAcontencer,
       VamosAlem
     );
-    console.log("valor Alto ", valorAlto);
+    // console.log("valor Alto ", valorAlto);
 
     switch (valorAlto) {
       case DesenvolvemosPessoas:
-        return (
-          <Resultado casa="Desenvolvemos Pessoas" img="DesenvolvemosPessoas" />
-        );
+        return <Resultado casa="Desenvolvemos Pessoas" />;
       case VamosAlem:
-        return <Resultado casa="Vamos Alem" img="VamosAlem" />;
+        return <Resultado casa="Vamos Alem" />;
       case AmamosResultados:
-        return <Resultado casa="Amamos Resultados" img="AmamosResultados" />;
+        return <Resultado casa="Amamos Resultados" />;
       case FazemosAcontencer:
-        return <Resultado casa="Fazemos Acontecer" img="FazemosAcontecer" />;
+        return <Resultado casa="Fazemos Acontecer" />;
       case SomosTransparentes:
-        return (
-          <Resultado casa="Somos Transparentes" img="SomosTransparentes" />
-        );
+        return <Resultado casa="Somos Transparentes" />;
       default:
         break;
     }
@@ -197,7 +194,7 @@ function App() {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-   useEffect(() => {
+  useEffect(() => {
     let nuAtual = 0;
     switch (pos) {
      case "App-header pos1":
@@ -239,23 +236,29 @@ function App() {
       nAleatorio = getRandomIntInclusive(1, 10);
     }
     setpos(`App-header pos${nAleatorio}`);
-   }, [pergunta])
-   
+  }, [pergunta]);
+
+  const cookies = new Cookies();
+
   return (
     <div className="App">
       <header className={pos}>
-        {pergunta < 11 ? (
+        {cookies.get("casa") ? (
+          <Resultado casa={cookies.get("casa")} />
+        ) : pergunta < 11 ? (
+
           <SwitchTransition>
             <CSSTransition
               key={pergunta}
-              timeout={{enter: 500, exit: 500}}
-              addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}
-              classNames='fade'
+              timeout={{ enter: 500, exit: 500 }}
+              addEndListener={(node, done) =>
+                node.addEventListener("transitionend", done, false)
+              }
+              classNames="fade"
             >
-              <Perguntas/>
+              <Perguntas />
             </CSSTransition>
-        </SwitchTransition>
-         
+          </SwitchTransition>
         ) : (
           <Casa />
         )}

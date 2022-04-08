@@ -9,6 +9,7 @@
   justify-content: center;
   color: #272424;
   transition: 1s;
+  overflow: hidden;
 }
 
 .pos1{

@@ -6,6 +6,7 @@
     align-items: center;
     width: 70%;
     height: 100%;
+    animation: fadein 5s;
 }
 .resultTitulo{
     font-family: 'Bigelow Rules', cursive;
@@ -44,5 +45,15 @@
     color: #e0e403;
     text-stroke: 1px #272424 ;
     -webkit-text-stroke: 1px #272424;
-    
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@media (max-width: 600px)
+{
+    .resultTitulo{
+        font-size: 40px;
+    }
 }
