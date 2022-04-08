@@ -18,12 +18,12 @@ function App() {
 
 
   const Perguntas = () => {
-    console.log("SomosTransparentes ", SomosTransparentes);
-    console.log("VamosAlem ", VamosAlem);
-    console.log("AmamosResultados ", AmamosResultados);
-    console.log("FazemosAcontencer ", FazemosAcontencer);
-    console.log("DesenvolvemosPessoas ", DesenvolvemosPessoas);
-    console.log("------------------------------------------------");
+    // console.log("SomosTransparentes ", SomosTransparentes);
+    // console.log("VamosAlem ", VamosAlem);
+    // console.log("AmamosResultados ", AmamosResultados);
+    // console.log("FazemosAcontencer ", FazemosAcontencer);
+    // console.log("DesenvolvemosPessoas ", DesenvolvemosPessoas);
+    // console.log("------------------------------------------------");
     switch (pergunta) {
       case 0:
         return (
@@ -165,12 +165,6 @@ function App() {
   };
 
   const Casa = () => {
-    // console.log("SomosTransparentes ", SomosTransparentes);
-    // console.log("VamosAlem ", VamosAlem);
-    // console.log("AmamosResultados ", AmamosResultados);
-    // console.log("FazemosAcontencer ", FazemosAcontencer);
-    // console.log("DesenvolvemosPessoas ", DesenvolvemosPessoas);
-    // console.log("------------------------------------------------");
     let valorAlto = Math.max(
       SomosTransparentes,
       AmamosResultados,
@@ -178,7 +172,6 @@ function App() {
       FazemosAcontencer,
       VamosAlem
     );
-    console.log("valor Alto ", valorAlto);
 
     switch (valorAlto) {
       case DesenvolvemosPessoas:
